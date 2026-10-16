@@ -63,14 +63,23 @@ int main(void)
     }
 
 
-    free(First);
-    free(Second);
-    free(Third);
+    Current = head;
 
-    First = NULL;
-    Second = NULL;
-    Third = NULL;
+    struct Node *Next;
+
+    while(Current != NULL){
+
+       Next = Current->Next;
+
+        free(Current);
+
+        Current = Next;
+
+    }
+
+  
     head = NULL;
+    Next = NULL;
 
     return 0;
 }
